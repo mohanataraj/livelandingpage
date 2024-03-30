@@ -55,7 +55,7 @@ export default function Home() {
                 </a>
                 <div className="flex items-center lg:order-2">
 
-                    <a href="https://themesberg.com/product/tailwind-css/landing-page" className="text-black font-mono font-semibold rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ">Sign Up</a>
+                    <a href="#signup-section" className="text-black font-mono font-semibold rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ">Sign Up</a>
                 </div>
             </div>
         </nav>

@@ -93,9 +93,9 @@ export default function Home() {
                 auto insurance with computer vision based A.I. models for quicker evidence based claim process and real-time updates for maps.
                 </p>
                 <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 md:pb-10">
-                    <Link href="signup-section" className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-white rounded-lg sm:w-auto hover:bg-purple-400 focus:ring-4 focus:ring-purple-100 dark:text-white dark:bg-blue-800 dark:border-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-600/30">
+                    <a href="#signup-section" className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-white rounded-lg sm:w-auto hover:bg-purple-400 focus:ring-4 focus:ring-purple-100 dark:text-white dark:bg-blue-800 dark:border-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-600/30">
                       Sign Up
-                    </Link> 
+                    </a> 
                     <Link href="#experience-section" scroll={true} className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-blue-400 bg-white border border-yellow-400 rounded-lg sm:w-auto focus:outline-none hover:bg-yellow-100 hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-yellow-200 dark:focus:ring-yellow-400 dark:bg-white dark:text-blue-700 dark:border-white dark:hover:text-white dark:hover:bg-yellow-400">
                            Learn more
                     </Link>

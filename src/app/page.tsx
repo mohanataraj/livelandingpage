@@ -5,6 +5,16 @@ import Image from "next/image";
 
 import Link from "next/link";
 import React, { useState, FormEvent } from 'react'
+//mport { generateClient } from "aws-amplify/api";
+import { Amplify} from 'aws-amplify';
+import awsExports from '../aws-exports'; // The path may vary
+import { generateClient } from 'aws-amplify/api';
+import config from '../amplifyconfiguration.json';
+import { createSignup } from "@/graphql/mutations";
+import { CreateSignupMutation } from "@/API";
+Amplify.configure(config);
+
+const client = generateClient();
 
 export default function Home() {
 
@@ -20,17 +30,28 @@ export default function Home() {
     try {
       const formData = new FormData(event.currentTarget)
       console.log("Form Data", formData.get("email"))
-      const response = await fetch('/api/submit', {
-        method: 'POST',
-        body: formData,
-      })
- 
-      if (!response.ok) {
-        throw new Error('Failed to submit the data. Please try again.')
+      // const response = await fetch('/api/submit', {
+      //   method: 'POST',
+      //   body: formData,
+      // })
+      const data = {
+          email : formData.get("email")
       }
+     const result = await client.graphql({
+      query:createSignup,
+      variables:{
+        input:{
+           email: formData.get("email")?.toString()
+        }
+      }
+
+     })
+      // if (!response.ok) {
+      //   throw new Error('Failed to submit the data. Please try again.')
+      // }
  
       // Handle response if necessary
-      const data = await response.json()
+      //const data = await response.json()
       // ...
     } catch (error) {
       // Capture the error message to display to the user

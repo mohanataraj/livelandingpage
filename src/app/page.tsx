@@ -58,7 +58,7 @@ export default function Home() {
      // setError(error.message:string)
       console.error(error)
     } finally {
-      setIsLoading(false)
+      setIsLoading(true)
     }
   }
 
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="grid max-w-screen-xl px-4 pt-20 pb-8 sm:grid-cols-1 sm:mt-3 md:grid-cols-1 md:m-10 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 place-content-center">
             <div className="mr-auto place-self-center lg:col-span-7">
                 <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:p-5 md:text-5xl xl:text-6xl dark:text-blue-700">We drive with <br />you & your family.</h1>
-                <p className="max-w-2xl mb-6 font-light text-gray-500 md:p-5 lg:mb-8 md:text-lg lg:text-xl dark:text-zinc-700"> &emsp; We at Live are building next generation auto insurance and live traffic view infrastructure. <br /> &emsp; We provide
+                <p className="max-w-2xl mb-6 font-light text-gray-500 md:p-5 lg:mb-8 md:text-lg lg:text-xl dark:text-zinc-700"> We at Live are building next generation auto insurance and live traffic view infrastructure. <br /> &emsp; We provide
                 auto insurance with computer vision based A.I. models for quicker evidence based claim process and real-time updates for maps.
                 </p>
                 <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 md:pb-10">
@@ -101,30 +101,36 @@ export default function Home() {
                     </Link>
                 </div>
             </div>
-            <div className=" pl-16 sm:pl-3 lg:mt-0 lg:col-span-5 lg:flex">
+            <div className="overflow-auto sm:overflow-visible pl-16 sm:pl-3 lg:mt-0 lg:col-span-5 lg:flex">
                 <img src="/images/insurance.gif" width={190} alt="hero image"/>
             </div>                
         </div>
     </section>
 
-      <section id="experience-section" className="pt-20 pb-8 w-full flex min-h-screen flex-col items-center justify-between bg-yellow-400">
+      <section id="experience-section" className="pt-20 pb-8 w-full flex min-h-screen flex-col items-center bg-yellow-400">
       <p className="mb-3 text-xl text-black font-semibold font-2xl">
         Experience Our App{" "}
           </p>
           <p>Use this app and let us know your experience</p>
-        <div className="flex place-items-center">
-        <iframe className="flex" style={{border: "1px solid rgba(0, 0, 0, 0.1)"}} width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Ft0Ox1a9UnJU4VKUQkWK846%2FLive-auto-insurance-prototype%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-3%26viewport%3D111%252C132%252C0.15%26t%3DJNmFciG2qplawXyZ-1%26scaling%3Dscale-down%26starting-point-node-id%3D1%253A3%26mode%3Ddesign" allowFullScreen></iframe>
+        <div className="flex place-items-center aspect-video">
+        <iframe className="w-full h-[300px] sm:h-[450px] md:h-[600px] lg:h-[650px] xl:h-dvh"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Ft0Ox1a9UnJU4VKUQkWK846%2FLive-auto-insurance-prototype%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-3%26viewport%3D111%252C132%252C0.15%26t%3DJNmFciG2qplawXyZ-1%26scaling%3Dscale-down%26starting-point-node-id%3D1%253A3%26mode%3Ddesign" allowFullScreen></iframe>
         </div>
       </section>
-      <section id="signup-section" className="pb-8 w-full flex flex-col items-center justify-between bg-blue-800">
+      {
+        isLoading && <section className="pb-8 w-full flex flex-col items-center justify-between bg-blue-800"> 
+        <p className="m-10 text-4xl text-white font-semibold">Thank you for sign up. Watch your inbox for more on our product.</p> </section>
+         ||
+      <section id="signup-section" className="p-8 w-full flex flex-col items-center justify-between bg-gray-800">
         <p className="m-10 text-4xl text-white font-semibold"> Sign Up</p>
-
+      
+    
       <form onSubmit={onSubmit}>
-        <label className="text-2xl text-white">Email </label>
-        <input className="w-80 h-10 p-2 text-black place-items-ce" id="email" type="email" name="email" placeholder="email@example.com" onChange={(e)=>{setEmail(e.target.value)}} />
-        <button className="ml-10 text-white bg-yellow-400 px-4 py-3 rounded-lg" type="submit">Submit</button>
+        <label className="text-2xl text-white m-5 p-10 place-items-center">Email </label>
+        <input className="w-80 h-10 p-2 text-black place-items-center" id="email" type="email" name="email" placeholder="email@example.com" onChange={(e)=>{setEmail(e.target.value)}} />
+        <button className="m-10 text-white bg-blue-400 px-4 py-3 rounded-lg" type="submit">Submit</button>
       </form>
       </section>
+      }
     </main>
     
   );

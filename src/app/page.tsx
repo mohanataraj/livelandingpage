@@ -152,7 +152,7 @@ export default function Home() {
             </div>
             <div className="overflow-auto sm:overflow-visible  sm:pl-3 lg:mt-0 lg:col-span-5 lg:flex">
               <video className="h-full w-full rounded-lg aspectVideo" controls autoPlay>
-                 <source src ="/videos/livevid.mp4" type="video/mp4" />
+                 <source src ="/videos/live_vid.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div> 

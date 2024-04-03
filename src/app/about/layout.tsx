@@ -6,7 +6,7 @@ export default function SignupLayout({
     return (
       <section>
         {/* Include shared UI here e.g. a header or sidebar */}
-        <p>Hi Sign up layout</p>
+       
    
         {children}
       </section>

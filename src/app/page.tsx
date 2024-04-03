@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 'use client'
 
 
@@ -12,6 +13,13 @@ import { generateClient } from 'aws-amplify/api';
 import config from '../amplifyconfiguration.json';
 import { createSignup } from "@/graphql/mutations";
 import { CreateSignupMutation } from "@/API";
+
+import {Button,Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,Typography,Input,Navbar,
+  MobileNav }  from "@material-tailwind/react";
+
 Amplify.configure(config);
 
 const client = generateClient();
@@ -22,6 +30,10 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null)
   const [email,setEmail] = useState<string | null>()
  
+  const [open, setOpen] = React.useState(false);
+ 
+  const handleOpen = () => setOpen(!open);
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setIsLoading(true)
@@ -46,6 +58,7 @@ export default function Home() {
       }
 
      })
+
       // if (!response.ok) {
       //   throw new Error('Failed to submit the data. Please try again.')
       // }
@@ -59,6 +72,7 @@ export default function Home() {
       console.error(error)
     } finally {
       setIsLoading(true)
+      handleOpen()
     }
   }
 
@@ -67,71 +81,91 @@ export default function Home() {
    
     <main>
 
-      <header className="h-3  pt-0 w-full">
+    <header className="absolute z-50 w-full left-0 top-0">
+
+    <div className="container"> 
         <nav className="bg-white py-2.5 dark:bg-white">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="#" className="flex items-center px-4">
                     <img src="/logo_temp.svg" className="h-6 mr-3 sm:h-9" alt="Live Logo" />
-                    <span className="self-center font-mono text-xl font-semibold whitespace-nowrap dark:text-black">LIVE</span>
+                    <span className="self-center italics font-mono text-black text-xl font-semibold whitespace-nowrap dark:text-black">LIVE</span>
                 </a>
-                <div className="flex items-center lg:order-2">
+                <div className="flex flex-wrap items-center lg:order-2">
+                  <a href="https://www.figma.com/proto/t0Ox1a9UnJU4VKUQkWK846/Live-auto-insurance-prototype?page-id=0%3A1&type=design&node-id=1-3&viewport=114%2C125%2C0.16&t=G08BDM6VndWg33tb-1&scaling=scale-down&starting-point-node-id=1%3A3&mode=design" target="_blank" rel="noopener noreferrer" className="p-3 text-gray-800 font-semibold">Prototype</a>
+                  <a href="#" className="text-blue-gray-800 font-semibold" onClick={handleOpen}>Enroll</a>
 
-                    <a href="#signup-section" className="text-black font-mono font-semibold rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ">Sign Up</a>
+      <>
+      <Dialog open={open} handler={handleOpen}>
+      <form onSubmit={onSubmit}>
+        <DialogHeader>Enroll Now</DialogHeader>
+        <DialogBody>
+       
+        <Typography className="mb-4" variant="h6">
+              Your Email 
+            </Typography>
+            <Input label="Email" size="lg" type="email" name="email" placeholder="email@example.com" onChange={(e)=>{setEmail(e.target.value)}} />
+          
+       
+       
+        </DialogBody>
+        <DialogFooter>
+        <Button
+            variant="text"
+            color="red"
+            onClick={handleOpen}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button variant="gradient" color="blue" type="submit">
+            <span>Submit</span>
+          </Button>
+          
+        </DialogFooter>
+        </form>
+      </Dialog>
+      
+    </>
                 </div>
             </div>
         </nav>
-        
+      </div>
     </header>
   
    
 
-    <section className="mt-4 bg-white dark:bg-white h-dvh">
-        <div className="grid max-w-screen-xl px-4 pt-20 pb-8 sm:grid-cols-1 sm:mt-3 md:grid-cols-1 md:m-10 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 place-content-center">
-            <div className="mr-auto place-self-center lg:col-span-7">
-                <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:p-5 md:text-5xl xl:text-6xl dark:text-blue-700">We drive with <br />you & your family.</h1>
-                <p className="max-w-2xl mb-6 font-light text-gray-500 md:p-5 lg:mb-8 md:text-lg lg:text-xl dark:text-zinc-700"> We at Live are building next generation auto insurance and live traffic view infrastructure. <br /> &emsp; We provide
-                auto insurance with computer vision based A.I. models for quicker evidence based claim process and real-time updates for maps.
+    <section className="bg-white dark:bg-white relative pt-[120px] lg:pt-[15px] pb-[11px]">
+        <div className="grid max-w-screen-xl px-4  pb-8 sm:grid-cols-1 sm:mt-3 md:grid-cols-1 md:m-10 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 ">
+            <div className="mr-auto lg:col-span-7">
+                <h1 className="max-w-2xl mb-4 text-4xl font-extrabold text-blue-700 leading-none tracking-tight  md:p-5 md:text-5xl xl:text-6xl dark:text-blue-700">We drive with <br />you & your family.</h1>
+                <p className="max-w-2xl mb-6 font-regular text-blue-gray-800 md:p-5 lg:mb-8 md:text-lg lg:text-lg dark:text-zinc-700"> We at Live are building next generation auto insurance and live traffic view infrastructure. <br /> &emsp; 
+                With our computer vision based A.I. models we have quicker evidence based automated claim process and real-time updates for maps.
                 </p>
-                <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 md:pb-10">
-                    <a href="#signup-section" className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-white rounded-lg sm:w-auto hover:bg-purple-400 focus:ring-4 focus:ring-purple-100 dark:text-white dark:bg-blue-800 dark:border-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-600/30">
-                      Sign Up
-                    </a> 
-                    <Link href="#experience-section" scroll={true} className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-blue-400 bg-white border border-yellow-400 rounded-lg sm:w-auto focus:outline-none hover:bg-yellow-100 hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-yellow-200 dark:focus:ring-yellow-400 dark:bg-white dark:text-blue-700 dark:border-white dark:hover:text-white dark:hover:bg-yellow-400">
-                           Learn more
-                    </Link>
-                </div>
+                
+                    <div className="flex flex-row">
+                    <Button onClick={handleOpen} className="m-2" variant="gradient">
+                    Enroll Now
+                    </Button> 
+          
+                    </div>
+              
             </div>
-            <div className="overflow-auto sm:overflow-visible pl-16 sm:pl-3 lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="/images/insurance.gif" width={190} alt="hero image"/>
-            </div>                
+            <div className="overflow-auto sm:overflow-visible  sm:pl-3 lg:mt-0 lg:col-span-5 lg:flex">
+              <video className="h-full w-full rounded-lg aspectVideo" controls autoPlay>
+                 <source src ="/videos/livevid.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div> 
+                          
         </div>
     </section>
 
-      <section id="experience-section" className="pt-20 pb-8 w-full flex min-h-screen flex-col items-center bg-yellow-400">
-      <p className="mb-3 text-xl text-black font-semibold font-2xl">
-        Experience Our App{" "}
-          </p>
-          <p>Use this app and let us know your experience</p>
-        <div className="flex place-items-center aspect-video">
-        <iframe className="w-full h-[300px] sm:h-[450px] md:h-[600px] lg:h-[650px] xl:h-dvh"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Ft0Ox1a9UnJU4VKUQkWK846%2FLive-auto-insurance-prototype%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-3%26viewport%3D111%252C132%252C0.15%26t%3DJNmFciG2qplawXyZ-1%26scaling%3Dscale-down%26starting-point-node-id%3D1%253A3%26mode%3Ddesign" allowFullScreen></iframe>
-        </div>
-      </section>
-      {
-        isLoading && <section className="pb-8 w-full flex flex-col items-center justify-between bg-blue-800"> 
-        <p className="m-10 text-4xl text-white font-semibold">Thank you for sign up. Watch your inbox for more on our product.</p> </section>
-         ||
-      <section id="signup-section" className="p-8 w-full flex flex-col items-center justify-between bg-gray-800">
-        <p className="m-10 text-4xl text-white font-semibold"> Sign Up</p>
       
-    
-      <form onSubmit={onSubmit}>
-        <label className="text-2xl text-white m-5 p-10 place-items-center">Email </label>
-        <input className="w-80 h-10 p-2 text-black place-items-center" id="email" type="email" name="email" placeholder="email@example.com" onChange={(e)=>{setEmail(e.target.value)}} />
-        <button className="m-10 text-white bg-blue-400 px-4 py-3 rounded-lg" type="submit">Submit</button>
-      </form>
-      </section>
-      }
+     
+      
     </main>
     
   );
 }
+
+

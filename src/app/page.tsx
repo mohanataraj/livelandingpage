@@ -95,7 +95,7 @@ export default function Home() {
                   <a href="#" className="text-blue-gray-800 font-semibold" onClick={handleOpen}>Enroll</a>
 
       <>
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open} handler={handleOpen} >
       <form onSubmit={onSubmit}>
         <DialogHeader>Enroll Now</DialogHeader>
         <DialogBody>
@@ -123,7 +123,7 @@ export default function Home() {
           
         </DialogFooter>
         </form>
-      </Dialog>
+  </Dialog>
       
     </>
                 </div>

@@ -8,12 +8,69 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
+export const onCreateFeedback = /* GraphQL */ `subscription OnCreateFeedback($filter: ModelSubscriptionFeedbackFilterInput) {
+  onCreateFeedback(filter: $filter) {
+    id
+    name
+    email
+    message
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateFeedbackSubscriptionVariables,
+  APITypes.OnCreateFeedbackSubscription
+>;
+export const onUpdateFeedback = /* GraphQL */ `subscription OnUpdateFeedback($filter: ModelSubscriptionFeedbackFilterInput) {
+  onUpdateFeedback(filter: $filter) {
+    id
+    name
+    email
+    message
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateFeedbackSubscriptionVariables,
+  APITypes.OnUpdateFeedbackSubscription
+>;
+export const onDeleteFeedback = /* GraphQL */ `subscription OnDeleteFeedback($filter: ModelSubscriptionFeedbackFilterInput) {
+  onDeleteFeedback(filter: $filter) {
+    id
+    name
+    email
+    message
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteFeedbackSubscriptionVariables,
+  APITypes.OnDeleteFeedbackSubscription
+>;
 export const onCreateSignup = /* GraphQL */ `subscription OnCreateSignup($filter: ModelSubscriptionSignupFilterInput) {
   onCreateSignup(filter: $filter) {
     id
     email
     createdAt
     updatedAt
+    _version
+    _deleted
+    _lastChangedAt
     __typename
   }
 }
@@ -27,6 +84,9 @@ export const onUpdateSignup = /* GraphQL */ `subscription OnUpdateSignup($filter
     email
     createdAt
     updatedAt
+    _version
+    _deleted
+    _lastChangedAt
     __typename
   }
 }
@@ -40,6 +100,9 @@ export const onDeleteSignup = /* GraphQL */ `subscription OnDeleteSignup($filter
     email
     createdAt
     updatedAt
+    _version
+    _deleted
+    _lastChangedAt
     __typename
   }
 }

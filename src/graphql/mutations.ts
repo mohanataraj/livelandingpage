@@ -8,6 +8,69 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
+export const createFeedback = /* GraphQL */ `mutation CreateFeedback(
+  $input: CreateFeedbackInput!
+  $condition: ModelFeedbackConditionInput
+) {
+  createFeedback(input: $input, condition: $condition) {
+    id
+    name
+    email
+    message
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateFeedbackMutationVariables,
+  APITypes.CreateFeedbackMutation
+>;
+export const updateFeedback = /* GraphQL */ `mutation UpdateFeedback(
+  $input: UpdateFeedbackInput!
+  $condition: ModelFeedbackConditionInput
+) {
+  updateFeedback(input: $input, condition: $condition) {
+    id
+    name
+    email
+    message
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateFeedbackMutationVariables,
+  APITypes.UpdateFeedbackMutation
+>;
+export const deleteFeedback = /* GraphQL */ `mutation DeleteFeedback(
+  $input: DeleteFeedbackInput!
+  $condition: ModelFeedbackConditionInput
+) {
+  deleteFeedback(input: $input, condition: $condition) {
+    id
+    name
+    email
+    message
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteFeedbackMutationVariables,
+  APITypes.DeleteFeedbackMutation
+>;
 export const createSignup = /* GraphQL */ `mutation CreateSignup(
   $input: CreateSignupInput!
   $condition: ModelSignupConditionInput
@@ -17,6 +80,9 @@ export const createSignup = /* GraphQL */ `mutation CreateSignup(
     email
     createdAt
     updatedAt
+    _version
+    _deleted
+    _lastChangedAt
     __typename
   }
 }
@@ -33,6 +99,9 @@ export const updateSignup = /* GraphQL */ `mutation UpdateSignup(
     email
     createdAt
     updatedAt
+    _version
+    _deleted
+    _lastChangedAt
     __typename
   }
 }
@@ -49,6 +118,9 @@ export const deleteSignup = /* GraphQL */ `mutation DeleteSignup(
     email
     createdAt
     updatedAt
+    _version
+    _deleted
+    _lastChangedAt
     __typename
   }
 }

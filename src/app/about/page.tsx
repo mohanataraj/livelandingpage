@@ -1,27 +1,53 @@
 
 //import { Carousel } from "@material-tailwind/react";
 "use client"
+import Link from 'next/link'
 import { Article } from '../article'
 import ScreenLayout  from '../components/screenlayout/page'
 
 function AboutPage() {
   return (
-   <><ScreenLayout> <Article
+   <><ScreenLayout /> <Article
           title="About"
           imageAlt="Lorem Picsum"
           imageSrc="https://picsum.photos/420/640?grayscale"
       >
           {/* prettier-ignore */}
+        <p>Welcome, get to know more us. </p>
+        <details
+          className="mt-4 block rounded-sm border px-4 open:border-primary-400 hover:border-primary-300"
+          open
+        >
+          <summary className="-mx-4 cursor-pointer border-primary-200 px-4 py-3">
+            What is Live Insurance?
+          </summary>
           <p>
-              Holly is a free HTML/CSS landing page designed and developed by <a href="https://twitter.com/pacovitiello">@pacovitiello</a> and <a href="https://twitter.com/DavidePacilio">@DavidePacilio</a>!
+            We are a tech company providing insurance to customers and building live intraffic 
+            view and real-time automated updates on maps using computer vision algorithms{' '}
+            
           </p>
           <p>
-              Holly is suitable for all kind of startups, its easily customizable, and its
-              downloadable for personal and commercial use.
+            We have several other services and use cases in broader prospective. 
           </p>
-          <p>This template is distributed under the MIT License.</p>
+        </details>
+        <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
+          <summary className="-mx-4 cursor-pointer px-4 py-3">How far are we in building our app</summary>
+          <p>
+            We are still at the early phases, performing go to market/ market testing to see if users are
+            find value in our product and want our service.
+          </p>
+          <p>
+            Feel free to give your feedback of our concept <Link href="/feedback">Feedback</Link>
+          </p>
+        </details>
+        <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
+          <summary className="-mx-4 cursor-pointer px-4 py-3">Can I get early access ?</summary>
+          <p>
+            Sign Up!!! from our main page to get our product earlier than the rest.
+          </p>
+        </details>
       </Article>
-      </ScreenLayout></>
+      </>
     
   )
 }

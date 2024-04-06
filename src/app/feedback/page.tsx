@@ -45,7 +45,7 @@ export default function SupportPage() {
 
 
   return (
-    <ScreenLayout>
+   
       <Article
         title="Feedback"
         imageAlt="Lorem Picsum"
@@ -105,6 +105,6 @@ export default function SupportPage() {
           )}
         </form>
       </Article>
-    </ScreenLayout>
+    
   )
 }

@@ -1,4 +1,4 @@
-import NavigationHeader  from '../navigation/page'
+//import NavigationHeader  from '../navigation/page'
 
 export default function ScreenLayout({
     children, // will be a page or nested layout
@@ -9,7 +9,7 @@ export default function ScreenLayout({
       <section>
         {/* Include shared UI here e.g. a header or sidebar */}
        
-        <NavigationHeader />
+    
         {children}
       </section>
     )

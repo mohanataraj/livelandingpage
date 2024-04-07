@@ -7,6 +7,7 @@ import { generateClient } from "aws-amplify/api";
 import { createFeedback } from '../../graphql/mutations';
 import config from '../../amplifyconfiguration.json';
 import { Amplify} from 'aws-amplify';
+import { truncate } from 'fs';
 
 Amplify.configure(config);
 
@@ -19,9 +20,10 @@ export default function SupportPage() {
   const client = generateClient()
 
   function handleClick(){
-    setSuccess(true)
+    console.log("c")
   }
    async function handleSubmit (event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     try {
       const formData = new FormData(event.currentTarget)
       const newFeedback = await client.graphql({
@@ -39,6 +41,11 @@ export default function SupportPage() {
       console.log(error)
     }finally{
       //do nothing
+      
+      setSuccess(true)
+      setEmail(" ")
+      setName(" ")
+      setMessage(" ")
     }
     
    }

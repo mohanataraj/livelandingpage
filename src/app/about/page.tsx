@@ -22,7 +22,7 @@ function AboutPage() {
             What is Live Insurance?
           </summary>
           <p>
-            We are a tech company providing insurance to customers and building live intraffic 
+            We are a tech company providing insurance to customers and building real-time traffic 
             view and real-time automated updates on maps using computer vision algorithms{' '}
             
           </p>
@@ -37,13 +37,13 @@ function AboutPage() {
             find value in our product and want our service.
           </p>
           <p>
-            Feel free to give your feedback of our concept <Link href="/feedback">Feedback</Link>
+            Feel free to give your feedback of our concept <Link href="/feedback" ><span className='text-[#2563eb]'>Feedback</span></Link>
           </p>
         </details>
         <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
           <summary className="-mx-4 cursor-pointer px-4 py-3">Can I get early access ?</summary>
           <p>
-            Sign Up!!! from our main page to get our product earlier than the rest.
+            <span className='text-[#2563eb]'><Link href="/">Sign Up!!!</Link> </span>from our main page to get our product earlier than the rest.
           </p>
         </details>
       </Article>

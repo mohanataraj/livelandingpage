@@ -51,7 +51,7 @@ export default function NavigationHeader (){
        </button>
      </div>
      <div
-       className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`}
+       className={`w-full flex flex-row-reverse align-items-center block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`}
      >
                     <div className="flex md:flex-shrink items-center lg:order-2">
                         

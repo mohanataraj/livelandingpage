@@ -20,10 +20,10 @@ export default function NavigationHeader (){
 
     return(
 
-<header className="absolute z-50 w-full left-0 top-0">
+<header className="absolute bg-[#FFDB57] z-50 w-full left-0 top-0">
 
-    <div className="container"> 
-        <nav className="bg-white justify-between flex-wrap py-3 dark:bg-white">
+    <div className="container w-full"> 
+        <nav className="justify-between flex-wrap py-3">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="/" className="flex items-center">
                     <img src="/logo_temp.svg" className="h-6 mr-3 sm:h-9" alt="Live Logo" />

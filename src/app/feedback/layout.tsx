@@ -6,7 +6,7 @@ export default function FeedbackLayout({
     children: React.ReactNode
   }) {
     return (
-      <section>
+      <section className="bg-[#FFDB57]">
         {/* Include shared UI here e.g. a header or sidebar */}
         <ScreenLayout />
    

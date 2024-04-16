@@ -22,19 +22,23 @@ function AboutPage() {
             What is Live Insurance?
           </summary>
           <p>
-            We are a tech company providing insurance to customers and building real-time traffic 
-            view and real-time automated updates on maps using computer vision algorithms{' '}
+            We are a tech company providing low cost auto insurance to customers with helping them create their
+            own policies with a click of few buttons. We are also building real-time traffic 
+            view and real-time automated updates on maps using computer vision algorithms,these algorithms also helps us 
+            to automate the claim process with no intervention in the future. {' '}
             
           </p>
           <p>
-            We have several other services and use cases in broader prospective. 
+            We have several other services and use cases in broader prospective. For example, partnering with 
+            car manufactures for connected cars with embeded cameras, our solution can call in the necessary 
+            services in case of emergency with zero or no intervention. 
           </p>
         </details>
         <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
           <summary className="-mx-4 cursor-pointer px-4 py-3">How far are we in building our app</summary>
           <p>
             We are still at the early phases, performing go to market/ market testing to see if users are
-            find value in our product and want our service.
+            find value in our product and want our service. We are starting with phone and expanding into connected cars.
           </p>
           <p>
             Feel free to give your feedback of our concept <Link href="/feedback" ><span className='text-[#2563eb]'>Feedback</span></Link>
@@ -43,7 +47,7 @@ function AboutPage() {
         <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
           <summary className="-mx-4 cursor-pointer px-4 py-3">Can I get early access ?</summary>
           <p>
-            <span className='text-[#2563eb]'><Link href="/">Sign Up!!!</Link> </span>from our main page to get our product earlier than the rest.
+            <span className='text-[#2563eb]'><Link href="/">Sign Up</Link> </span>from our main page to get our product earlier than the rest.
           </p>
         </details>
       </Article>

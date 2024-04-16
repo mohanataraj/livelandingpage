@@ -24,8 +24,8 @@ export default function Home (){
                 </h1>
                 <p className="max-w-2xl mb-6 font-regular text-[#3f3e3e] md:p-5 lg:mb-8 md:text-lg lg:text-lg dark:text-zinc-700"> 
                  
-                  We provide low premiums for auto insurance, a quick and easy way to create your own policy tailored to your needs and lifestyle
-                  and one tap claim process with no agents involved.
+                  We provide low monthly premiums for auto insurance, a quick and easy way to create your own policy tailored to your needs and lifestyle.
+                  And one tap claim process with no agents involved.
                   <br/> <br/><span className="text-[#3f3e3e] font-regular"> Leave your stress behind and take your ride with confidence. </span>
                 </p>
                 

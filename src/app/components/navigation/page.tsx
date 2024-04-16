@@ -26,7 +26,7 @@ export default function NavigationHeader (){
         <nav className="justify-between flex-wrap py-3">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="/" className="flex items-center">
-                    <img src="/logo_temp.svg" className="h-6 mr-3 sm:h-9" alt="Live Logo" />
+                    <img src="/logo_redesign.svg" className="h-6 mr-3 sm:h-9" alt="Live Logo" />
                     <span className="self-center italics font-mono text-black text-xl font-semibold whitespace-nowrap dark:text-black">LIVE</span>
                 </a>
      <div className="block lg:hidden">

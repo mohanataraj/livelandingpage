@@ -11,6 +11,7 @@ import SignupForm from "./components/signupform/page"
 import NavigationHeader from "./components/navigation/page";
 
 export default function Home (){
+   
   return (
 
    
@@ -24,9 +25,10 @@ export default function Home (){
                 </h1>
                 <p className="max-w-2xl mb-6 font-regular text-[#3f3e3e] md:p-5 lg:mb-8 md:text-lg lg:text-lg dark:text-zinc-700"> 
                  
-                  We provide low monthly premiums for auto insurance, a quick and easy way to create your own policy tailored to your needs and lifestyle.
+                  We provide low monthly premiums for auto insurance, a quick and easy way to create your own policy tailored to your needs.
                   And one tap claim process with no agents involved.
                   <br/> <br/><span className="text-[#3f3e3e] font-regular"> Leave your stress behind and take your ride with confidence. </span>
+                  See our  <a href="/videos/live_vidcanva.mp4" className="text-[#0731ee]"> demo</a>
                 </p>
                 
                 <SignupForm />
@@ -37,7 +39,7 @@ export default function Home (){
                  <source src ="/videos/live_vid.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video> */}
-              <img src="/images/car_yellowbg_reverse.jpeg"  />
+              <img src="/images/car_yellow_bg.jpeg"  />
 
             </div> 
                           

@@ -15,7 +15,7 @@ export default function Home (){
   return (
 
    
-  <main className="h-dvh bg-[#FFDB57]">
+  <main>
     <NavigationHeader />
     <section className="bg-[#FFDB57] dark:bg-[#FFDB57] relative pt-[120px] lg:pt-[15px] pb-[11px]">
         <div className="grid max-w-screen-xl px-4  pb-8 sm:grid-cols-1 sm:mt-3 md:grid-cols-1 md:m-10 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 ">
@@ -28,7 +28,7 @@ export default function Home (){
                   We provide low monthly premiums for auto insurance, a quick and easy way to create your own policy tailored to your needs.
                   And one tap claim process with no agents involved.
                   <br/> <br/><span className="text-[#3f3e3e] font-regular"> Leave your stress behind and take your ride with confidence. </span>
-                  See our  <a href="/videos/live_vidcanva.mp4" className="text-[#0731ee]"> demo</a>
+                  See our  <a href="/videos/canva_video.mp4" className="text-[#0731ee]"> demo</a>
                 </p>
                 
                 <SignupForm />
